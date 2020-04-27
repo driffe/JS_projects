@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="openQuiz(event, 'Quiz01')">Quiz01</button>
+        <button class="tablinks" onclick="openQuiz(event, 'Quiz02')">Quiz02</button>
+        <button class="tablinks" onclick="openQuiz(event, 'Quiz03')">Quiz03</button>
+    </div>
+    <!--This is quiz01-->
+    <div id="Quiz01" class="tabcontent">
+        <b>Quiz 01</b>
+        <p> 5 ? 14 = 
+            <input id = "ansBox01" type = "text" name = "question01" size = "4" placeholder = "Answer!">
+            <input id = "button01" type = "button" value = "Check Answer!" onclick = "check01();">
+        </p>
+        <p>You can find Hint below here</p>
+        <input id = "textbox01-1" type = "text" name = "value01Q01" size = "4">
+        <img class="img-question" src = "questionbox.PNG" alt="questionBox">
+        <input id = "textbox02-1" type = "text" name = "value02Q01" size = "4">
+        <img class="img-equals" src = "equalsbox.PNG" alt="equalsBox">
+        <input id = "result01" type = "text" name = "firstResult" size = "4">
+        <input id = "hintButton01" type = "button" value = "Hint!" onclick = "hintCheck01();">
+    </div>
+    <!--This is quiz02-->
+    <div id="Quiz02" class="tabcontent">
+        <b>Quiz 02</b>
+        <p>25 ? 8 = 
+            <input id = "ansBox02" type = "text" name = "question02" size = "4" placeholder = "Answer!">
+            <input id = "button02" type = "button" value = "Check Answer!" onclick = "check02();">
+        </p>
+        <p>You can find Hint below here</p>
+        <input id = "textbox01-2" type = "text" name = "value01Q01" size = "4">
+        <img class="img-question" src = "questionbox.PNG" alt="questionBox">
+        <input id = "textbox02-2" type = "text" name = "value02Q01" size = "4">
+        <img class="img-equals" src = "equalsbox.PNG" alt="equalsBox">
+        <input id = "result02" type = "text" name = "firstResult" size = "4">
+        <input id = "hintButton02" type = "button" value = "Hint!" onclick = "hintCheck02();">
+    </div>
+    <!--This is quiz03--> 
+    <div id="Quiz03" class="tabcontent">
+        <b>Quiz 03</b>
+        <p>17 ? 10 = 
+            <input id = "ansBox03" type = "text" name = "question03" size = "4" placeholder = "Answer!">
+            <input id = "button03" type = "button" value = "Check Answer!" onclick = "check03();">
+        </p>
+        <p>You can find Hint below here</p>
+        <input id = "textbox01-3" type = "text" name = "value01Q01" size = "4">
+        <img class="img-question" src = "questionbox.PNG" alt="questionBox">
+        <input id = "textbox02-3" type = "text" name = "value02Q01" size = "4">
+        <img class="img-equals" src = "equalsbox.PNG" alt="equalsBox">
+        <input id = "result03" type = "text" name = "firstResult" size = "4">
+        <input id = "hintButton03" type = "button" value = "Hint!" onclick = "hintCheck03();">
+    </div> 
+    <script src = "mathQuiz.js"></script>
+    <link href = "style.css" rel = "stylesheet">
+
+</body>
+</html>
