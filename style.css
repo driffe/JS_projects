@@ -1,10 +1,8 @@
 :root {
-  --primary-color: #007bff; /* Blue color for headings and buttons */
-  --secondary-color: #28a745; /* Green color for accents */
-  --background-color: #f1f1f1; /* Neutral background color */
+  --primary-color: #007bff;
+  --background-color: #f1f1f1; 
 }
 
-/* Apply the color scheme to elements */
 body {
   background-color: var(--background-color);
 }
@@ -13,15 +11,14 @@ b {
   color: var(--primary-color);
 }
 
-/* === Tab Container === */
 .tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+    max-width: 50vw;
 }
 
 .tab button {
-    /* === Tab Buttons === */
     background-color: inherit;
     float: left;
     border: none;
@@ -32,36 +29,36 @@ b {
 }
 
 .tab button:hover {
-    /* === Hover Effect for Tab Buttons === */
+
     background-color: #ddd;
 }
 
 .tab button.active {
-    /* === Active Tab Button === */
     background-color: #ccc;
 }
 
-/* === Tab Content === */
+
 .tabcontent {
     display: none;
-    padding: 20px 50px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-top: none;
+    
 }
-/* Apply styles to input fields */
+
 input[type="text"] {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
-/* Add focus style for input fields */
+
 input[type="text"]:focus {
   outline: none;
   border-color: var(--primary-color);
 }
 
-/* Style buttons */
+
 input[type="button"] {
   background-color: var(--primary-color);
   color: #fff;
@@ -71,15 +68,20 @@ input[type="button"] {
   cursor: pointer;
 }
 
-/* Add hover effect to buttons */
+
 input[type="button"]:hover {
   background-color: #0056b3;
 }
-/* CSS for hint containers */
+
+
 .hint-container {
   display: flex;
   align-items: center;
   margin-top: 10px;
+}
+
+.hint-container p {
+  margin: 0 5px;
 }
 
 .hint-input {
@@ -94,23 +96,23 @@ input[type="button"]:hover {
 
 /* Style the hint button */
 #hintButton {
-  background-color: #f39c12; /* Use an appropriate color for hint buttons */
+  background-color: #f39c12;
   color: #fff;
   border: none;
   padding: 8px 15px;
   border-radius: 4px;
   cursor: pointer;
+  margin: 0 5px;
 }
 
 /* Add hover effect to hint buttons */
 #hintButton:hover {
-  background-color: #e67e22; /* Darker shade of hint button color */
+  background-color: #e67e22; 
 }
+
 /* Adjust layout for mobile devices */
 @media screen and (max-width: 768px) {
-  /* For screens up to 768px width (typical tablet and smartphone sizes) */
 
-  /* Example of a mobile-friendly navigation menu */
   .tab {
     display: flex;
     flex-direction: column;
