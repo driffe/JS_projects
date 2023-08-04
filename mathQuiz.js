@@ -1,163 +1,95 @@
+// Function to switch between quizzes
 function openQuiz(evt, quiz) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
+    // Hide all quiz contents and deactivate all buttons
+    const tabcontents = document.getElementsByClassName("tabcontent");
+    const tablinks = document.getElementsByClassName("tablinks");
 
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+    for (let i = 0; i < tabcontents.length; i++) {
+        tabcontents[i].style.display = "none";
+        tablinks[i].classList.remove("active");
+    }
 
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(quiz).style.display = "block";
-  evt.currentTarget.className += " active";
+    // Show the selected quiz content and mark the button as active
+    document.getElementById(quiz).style.display = "block";
+    evt.currentTarget.classList.add("active");
 }
+
+// Function to check Quiz 01 answer
 function check01() {
-  var finalAns = 4;
-  var tempAns;
-  element01 = document.getElementById("ansBox01");
-  
-  if(element01 != null) {
-    tempAns = element01.value;
-  } else {
-    tempAns = 0;
-  }
-  if(tempAns == finalAns) {
-    console.log(tempAns);
-    //block the message and check the answer. 
-    document.getElementById("ansBox01").disabled = true;
-  } else {
-    alert("Try again!");
-  }
+    const finalAns = 4;
+    const element01 = document.getElementById("ansBox01");
+    const tempAns = element01 ? element01.value : 0;
+
+    if (parseInt(tempAns) === finalAns) {
+        // Block the input and provide feedback
+        element01.disabled = true;
+    } else {
+        alert("Try again!");
+    }
 }
-// (bigger one) / (small one) = (rest) ex) 19 ? 64 = 7
+
+// Function to provide a hint for Quiz 01
 function hintCheck01() {
-  var value01, value02;
-  element01 = document.getElementById("textbox01-1");
-  element02 = document.getElementById("textbox02-1");
+    const value01 = parseInt(document.getElementById("textbox01-1").value) || 0;
+    const value02 = parseInt(document.getElementById("textbox02-1").value) || 0;
 
-  if(element01 != null && element02 != null) {
-    value01 = element01.value;
-    value02 = element02.value;
-  }else {
-    value01 = 0;
-    value02 = 0;
-  }
-  if(value01 == 5 && value02 == 14) {
-    alert("You cannot get hint with this");
-  } else if(value01 == 14 && value02 == 5) {
-    alert("You cannot get hint with this");
-  }
-  console.log(value01, value02);
-  var ans;
-  if(parseInt(value01) < parseInt(value02)) {
-    console.log("first");
-    console.log(value01, value02);
-    ans = value02 % value01;
-  } else {
-    console.log("second");
-    console.log(value01, value02);
-    ans = value01 % value02;
-  }
-  document.getElementById("result01").value = ans;
+    let ans;
+    if (value01 < value02) {
+        ans = value02 % value01;
+    } else {
+        ans = value01 % value02;
+    }
+
+    document.getElementById("result01").value = ans;
 }
+
+// Function to check Quiz 02 answer
 function check02() {
-  var finalAns = 9;
-  var tempAns;
-  element01 = document.getElementById("ansBox02");
-  
-  if(element01 != null) {
-    tempAns = element01.value;
-  } else {
-    tempAns = 0;
-  }
-  if(tempAns == finalAns) {
-    console.log(tempAns);
-    //block the message and check the answer. 
-    document.getElementById("ansBox02").disabled = true;
-  } else {
-    alert("Try again!");
-  }
+    const finalAns = 9;
+    const element02 = document.getElementById("ansBox02");
+    const tempAns = element02 ? element02.value : 0;
+
+    if (parseInt(tempAns) === finalAns) {
+        // Block the input and provide feedback
+        element02.disabled = true;
+    } else {
+        alert("Try again!");
+    }
 }
-//sum of time ex) 15 + 3 = 6
+
+// Function to provide a hint for Quiz 02
 function hintCheck02() {
-  var value01, value02;
-  element01 = document.getElementById("textbox01-2");
-  element02 = document.getElementById("textbox02-2"); 
+    const value01 = parseInt(document.getElementById("textbox01-2").value) || 0;
+    const value02 = parseInt(document.getElementById("textbox02-2").value) || 0;
 
-  if(element01 != null && element02 != null) {
-    value01 = element01.value;
-    value02 = element02.value;
-  }else {
-    value01 = 0;
-    value02 = 0;
-  }
-  var ans;
-  while(true) {
-    if(value01 > 12) {
-      value01 = value01 - 12;
-    }
-    if(value02 > 12) {
-      value02 = value02 - 12;
-    }
-    if(value01 <= 12 && value02 <= 12) {
-      ans = parseInt(value01) + parseInt(value02);
-      break;
-    }
-  }
-  while(true) {
-    if(ans > 12) {
-      ans = ans - 12;
-    } else if(ans <= 12) {
-      break;
-    }
-  }
-  document.getElementById("result02").value= ans;
+    let ans = (value01 + value02) % 12;
+
+    document.getElementById("result02").value = ans;
 }
+
+// Function to check Quiz 03 answer
 function check03() {
- var finalAns = 277;
+    const finalAns = 277;
+    const element03 = document.getElementById("ansBox03");
+    const tempAns = element03 ? element03.value : 0;
 
- var tempAns;
-  element01 = document.getElementById("ansBox03");
-  
-  if(element01 != null) {
-    tempAns = element01.value;
-  } else {
-    tempAns = 0;
-  }
-  if(tempAns == finalAns) {
-    console.log(tempAns);
-    //block the message and check the answer. 
-    document.getElementById("ansBox03").disabled = true;
-  } else {
-    alert("Try again!");
-  }
+    if (parseInt(tempAns) === finalAns) {
+        // Block the input and provide feedback
+        element03.disabled = true;
+    } else {
+        alert("Try again!");
+    }
 }
+
+// Function to provide a hint for Quiz 03
 function hintCheck03() {
-  var value01, value02, result01, result02;
-  element01 = document.getElementById("textbox01-3");
-  element02 = document.getElementById("textbox02-3");
+    const value01 = parseInt(document.getElementById("textbox01-3").value) || 0;
+    const value02 = parseInt(document.getElementById("textbox02-3").value) || 0;
 
-  if(element01 != null && element02 != null) {
-    value01 = element01.value;
-    value02 = element02.value;
-  }else {
-    value01 = 0;
-    value02 = 0;
-  }
-  var ans, str1, str2;
-  result01 = (parseInt(value01) + parseInt(value02));
-  result02 = Math.abs(value01 - value02);
-  
-  str1 = result01.toString();
-  str2 = result02.toString();
-  ans = str1 + str2;
+    const result01 = (value01 + value02) % 12;
+    const result02 = Math.abs(value01 - value02);
 
-  document.getElementById("result03").value = ans;
+    const ans = result01.toString() + result02.toString();
+
+    document.getElementById("result03").value = ans;
 }
