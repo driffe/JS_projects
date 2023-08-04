@@ -1,46 +1,123 @@
-.tab {
-overflow: hidden;
-border: 1px solid #ccc;
-background-color: #f1f1f1;
+:root {
+  --primary-color: #007bff; /* Blue color for headings and buttons */
+  --secondary-color: #28a745; /* Green color for accents */
+  --background-color: #f1f1f1; /* Neutral background color */
 }
-.tab button {
-background-color: inherit;
-float: left;
-border: none;
-outline: none;
-cursor: pointer;
-padding: 14px 16px;
-transition: 0.3s;
+
+/* Apply the color scheme to elements */
+body {
+  background-color: var(--background-color);
 }
-.tab button:hover {
-background-color: #ddd;
-}
-.tab button.active {
-background-color: #ccc;
-}
-.tabcontent {
-display: none;
-padding: 20px 50px;
-border: 1px solid #ccc;
-border-top: none;
-}
+
 b {
-    font-weight: bold;
-    font-size: 24px;
+  color: var(--primary-color);
 }
-p {
-    font-weight: bold;
-    font-size: large;
+
+/* === Tab Container === */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
 }
-.img-question {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 5px;
+
+.tab button {
+    /* === Tab Buttons === */
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
 }
-.img-equals {
-    width: 20px;
-    height: 20px;
-    position: relative;
-    top: 5px;
+
+.tab button:hover {
+    /* === Hover Effect for Tab Buttons === */
+    background-color: #ddd;
+}
+
+.tab button.active {
+    /* === Active Tab Button === */
+    background-color: #ccc;
+}
+
+/* === Tab Content === */
+.tabcontent {
+    display: none;
+    padding: 20px 50px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+/* Apply styles to input fields */
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Add focus style for input fields */
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Style buttons */
+input[type="button"] {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect to buttons */
+input[type="button"]:hover {
+  background-color: #0056b3;
+}
+/* CSS for hint containers */
+.hint-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.hint-input {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hint-input p {
+  margin: 0 5px;
+}
+
+/* Style the hint button */
+#hintButton {
+  background-color: #f39c12; /* Use an appropriate color for hint buttons */
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add hover effect to hint buttons */
+#hintButton:hover {
+  background-color: #e67e22; /* Darker shade of hint button color */
+}
+/* Adjust layout for mobile devices */
+@media screen and (max-width: 768px) {
+  /* For screens up to 768px width (typical tablet and smartphone sizes) */
+
+  /* Example of a mobile-friendly navigation menu */
+  .tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tablinks {
+    margin-bottom: 10px;
+  }
 }
